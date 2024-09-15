@@ -1,6 +1,6 @@
 *.py[cod]
 __pycache__/
 
-venv/
+clock/
 .env/
-.venv/
+.clock/
