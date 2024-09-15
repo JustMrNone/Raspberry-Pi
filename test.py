@@ -8,19 +8,18 @@ serial = spi(port=0, device=0)
 device = max7219(serial, cascaded=1)
 
 #font = ImageFont.load_default()
-
-try:
-    while True:
-        for j in range(100):
+def row():
+    try:
+        while True:
+            
             with canvas(device) as draw:
                 for i in range(8):
                     draw.point((i, 0), fill="red")
             sleep(0.1)
-        sleep(0.5)
 
-except KeyboardInterrupt:
-    with canvas(device) as draw:
-        draw.rectangle(device.bounding_box, outline="black", fill="black")
+    except KeyboardInterrupt:
+        with canvas(device) as draw:
+            draw.rectangle(device.bounding_box, outline="black", fill="black")
 
 
-print("test complete")
+    print("test complete")

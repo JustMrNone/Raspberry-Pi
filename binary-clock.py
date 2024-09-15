@@ -3,3 +3,8 @@ from luma.core.interface.serial import spi
 from luma.core.render import canvas
 from PIL import ImageFont
 from time import sleep
+
+
+def main():
+    pass
+
