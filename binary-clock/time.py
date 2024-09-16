@@ -19,7 +19,7 @@ def get_current_time_12_hour():
 def main():
     hour, minute, second, am_pm = get_current_time_12_hour()
     print(f"Current Time: {hour:02}:{minute:02}:{second:02} {am_pm}")
-    print((hour))
+    print((am_pm))
 
 if __name__ == "__main__":
     main()
