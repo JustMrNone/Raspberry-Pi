@@ -39,30 +39,12 @@ class BinaryClock(Time):
             else:
                 draw.point((colnum, rownum), fill="black")
                 
-    def hours(self):
+    def hours(self, col, row):
+        
         with canvas(self.device) as draw:
-        # Define the bit positions for each number from 1 to 12
-            bit_positions = {
-                1: [(1, 4)],  # 0001
-                2: [(0, 4)],  # 0010
-                3: [(1, 4), (0, 4)],  # 0011
-                4: [(1, 3)],  # 0100
-                5: [(1, 3), (0, 4)],  # 0101
-                6: [(1, 3), (1, 4)],  # 0110
-                7: [(1, 3), (1, 4), (0, 4)],  # 0111
-                8: [(0, 3)],  # 1000
-                9: [(0, 3), (1, 4)],  # 1001
-                10: [(0, 3), (0, 4)],  # 1010
-                11: [(0, 3), (0, 4), (1, 4)],  # 1011
-                12: [(0, 3), (1, 3)]  # 1100
-        }
-
-        # Get the bit positions for the current hour
-            positions = bit_positions.get(self.hour, [])
-
-        # Light up the corresponding points on the LED matrix
-            for pos in positions:
-                draw.point(pos, fill="white")
+            for i in range(0, 2):
+                draw.point((i, row), fill="white")     
+                draw.point((i, row-1), fill="white")  
 
     def minutes(self, col, row):
 
@@ -93,7 +75,7 @@ def main():
     bitclock = BinaryClock(device)
     try:
         while True:
-            bitclock.hours()
+            bitclock.hours(0, 4)
             sleep(1)
             bitclock.clear_display()
             bitclock.minutes(2, 4)
