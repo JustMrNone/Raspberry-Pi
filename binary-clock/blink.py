@@ -17,6 +17,7 @@ def light_up(device, row, state):
             else:
                 draw.point((x, row), fill="black")
 
+
 def light_upvert(device, col, state):
     with canvas(device) as draw:
         for _ in range(1):
