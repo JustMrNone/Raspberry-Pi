@@ -242,7 +242,7 @@ def main():
             sleep(0.3)
             bitclock.AMPM()  # Display AM/PM
             sleep(0.2)
-                 # Adjust sleep duration as needed
+                
             
         
     except KeyboardInterrupt:
