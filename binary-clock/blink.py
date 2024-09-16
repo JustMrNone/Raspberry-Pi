@@ -6,7 +6,7 @@ import time
 def main():
     serial = spi(port=0, device=0)
     device = max7219(serial, cascaded=1)
-    blink(device, 0, 0.5)
+    blink(device, 8, 0.1)
 
 
 def light_up(device, row, state):
@@ -17,16 +17,20 @@ def light_up(device, row, state):
             else:
                 draw.point((x, row), fill="black")
 
-def blink(device, row, interval=0.1):
+
+def blink(device, totalrows=8, interval=0.1):
     try:
         while True:
-            light_up(device, row, True)
+            for row in range(totalrows):
+                for _ in range(1):
+                    light_up(device, row, True)
 
-            time.sleep(interval)
+                    time.sleep(interval)
 
-            light_up(device, row, False)
+                    light_up(device, row, False)
 
-            time.sleep(interval)
+                    time.sleep(interval)
+            
     except KeyboardInterrupt:
         with canvas(device) as draw:
             draw.rectangle(device.bounding_box, outline="black", fill="black")
