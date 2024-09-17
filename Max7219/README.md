@@ -1,4 +1,4 @@
-# Raspberry Pi Projects
+# Raspberry Pi Programs for an 8 x 8 Max2719 led screen
 ---------------------
 ## Apps
 ### Custom Shell
@@ -17,7 +17,7 @@
 
 -   Real-time audio analysis.
 -   Dynamic visual patterns based on music.
--   Customizable display settings and patterns.
+
 
 ### Text Scroller
 
@@ -27,9 +27,6 @@
 
 -   Scrolling text across the LED matrix.
 -   Adjustable speed and message content.
--   Simple interface for updating text and settings.
-
-  and a custom shell for the control and more features
 
 ### Binary Clock
 
@@ -39,9 +36,9 @@
 
 -   Binary representation of hours and minutes.
 -   Compact display using a single 8x8 matrix.
--   Portable design with a custom case and power bank.
 
 ## Games
+
 ### Pong
 
 **Description**: A classic Pong game adapted for the 8x8 LED matrix. This implementation brings the timeless arcade game to a compact display, featuring simple controls and classic gameplay. The objective is to keep the ball in play and score points against the opponent.
