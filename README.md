@@ -1,6 +1,5 @@
 
 # Raspberry Pi Projects
-Explore my Raspberry Pi projects, including:
 
 Binary Clock: Shows hours and minutes on an 8x8 LED matrix using binary representation.
 Pong: A classic Pong game adapted for the LED matrix.
