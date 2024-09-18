@@ -39,6 +39,7 @@ class Clock64:
                 if now > 0 and now < len(points):
                     with canvas(self.device) as draw:
                         for _ in points:
+                            #-1 because lists are zero indexed
                             last = points[now- 1]
                             draw.point(last, fill="white")
                 else:
