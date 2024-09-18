@@ -17,9 +17,8 @@ class Clock64:
         # Extract hours, minutes, and seconds
         hour = now.hour
         minute = now.minute
-        second = now.second
         
-        return hour, minute, second
+        return hour, minute
 
     def exchange(self, hour, minute):
         #how many minutes since midnight 
@@ -29,7 +28,7 @@ class Clock64:
 
     def show(self):
         points = []
-        hours, minutes, seconds = self.get_current_time_12_hour()
+        hours, minutes = self.get_current_time_12_hour()
         now = self.exchange(hours, minutes)
         try:
             while True:
@@ -40,13 +39,14 @@ class Clock64:
                 if now > 0 and now < len(points):
                     with canvas(self.device) as draw:
                         for _ in points:
-                            last = points[27 - 1]
+                            last = points[now- 1]
                             draw.point(last, fill="white")
                 else:
                     print("something is wrong")
         except KeyboardInterrupt: 
             with canvas(self.device) as draw:
                 draw.rectangle(self.device.bounding_box, outline="black", fill="black")
+#each hour is 22.5 minutes
 
 def main():
     serial = spi(port=0, device=0)
