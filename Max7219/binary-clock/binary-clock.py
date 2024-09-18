@@ -27,7 +27,7 @@ class Time:
     
 class BinaryClock: 
     # AM/PM display logic
-    def display_am_pm(draw, is_am):
+    def display_am_pm(self, draw, is_am):
         if is_am == "AM":
             # Display AM in the top-left corner
             draw.point((3, 0), fill="white")
@@ -39,7 +39,7 @@ class BinaryClock:
         else: 
             print("something is wrong! ")
             
-    def biclock():
+    def biclock(self):
             # Define bit positions for hours
             bit_positions_hours = {
                         1: [(1, 4)],  # 0001
