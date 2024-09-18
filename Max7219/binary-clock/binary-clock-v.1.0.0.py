@@ -235,11 +235,11 @@ def main():
             bitclock.clear_display()
             bitclock.update()
             bitclock.hours()
-            sleep(0.2)
-            bitclock.minutes()
-            sleep(0.2)
-            bitclock.seconds()
             sleep(0.3)
+            bitclock.minutes()
+            sleep(0.3)
+            bitclock.seconds()
+            sleep(0.2)
             bitclock.AMPM()  # Display AM/PM
             sleep(0.2)
                 
