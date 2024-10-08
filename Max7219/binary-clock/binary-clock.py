@@ -187,16 +187,22 @@ class BinaryClock:
 def main():
     # initiate device
     serial = spi(port=0, device=0)
-    device = max7219(serial, cascaded=1)
+    device = max7219(serial, cascaded=1) 
+    # reduce light intensity between 0 (dim) and 255 (bright)
+    device.contrast(5)  
+    # initiate the clocks class
     clock = BinaryClock()
+    # take the binary positions 
     hr, minu, sec = clock.biclock()
     
     time = Time()
 
 
     while True:
-        # Get the bit positions for the current hour, minute, and second each second
+        # get the current values
         nhr, nminu, nsec, ampm = time.get_current_time_12_hour()
+        # Get the bit positions for the current hour, minute, and second each second
+        
         positions_hours = hr.get(nhr, [])
         positions_minutes = minu.get(nminu, [])
         positions_seconds = sec.get(nsec, [])
@@ -204,11 +210,11 @@ def main():
         with canvas(device) as draw:
             # Light up the corresponding points on the LED matrix
             for pos in positions_hours:
-                draw.point(pos, fill="white")
+                draw.point(pos, fill="red")
             for pos in positions_minutes:
-                draw.point(pos, fill="white")
+                draw.point(pos, fill="red")
             for pos in positions_seconds:
-                draw.point(pos, fill="white")
+                draw.point(pos, fill="red")
 
             # Display AM or PM
             clock.display_am_pm(draw, ampm)
