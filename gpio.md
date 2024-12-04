@@ -1,3 +1,1 @@
-# Additional Documentation
-
-- [Devices Documentation](docs/devices.md)
+docs/devices.md
