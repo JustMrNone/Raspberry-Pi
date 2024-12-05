@@ -1,4 +1,0 @@
-site_name: Raspberry Pi Project
-nav:
-  - README: README.md
-  - Additional Info: docs/devices.md
